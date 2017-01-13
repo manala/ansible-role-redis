@@ -47,7 +47,7 @@ Using ansible galaxy requirements file:
 
 ```yaml
 manala_redis_config:
-  - bind: "127.0.0.1 {{ ansible_eth0.ipv4.address}}"
+  - bind: "127.0.0.1 {{ ansible_eth0.ipv4.address }}"
 ```
 
 ## Example playbook
