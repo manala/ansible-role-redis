@@ -1,0 +1,17 @@
+---
+
+- name: "{{ test }}"
+  hosts:
+    - debian.jessie
+    - debian.stretch
+  become: true
+  vars:
+    manala_redis_config:
+      - port: 1234
+  pre_tasks:
+    - import_tasks: pre_tasks/dotdeb.yml
+  roles:
+    - manala.redis
+  post_tasks:
+    - name: Goss
+      command: goss --gossfile {{ test }}.goss.yml validate
